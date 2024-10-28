@@ -21,7 +21,10 @@ const Noop = noop(0)
 
 type noop int
 
-func (n noop) Infof(format string, args ...interface{})                         {}
+//nolint:all
+func (n noop) Infof(format string, args ...interface{}) {}
+
+//nolint:all
 func (n noop) Warningf(format string, args ...interface{})                      {}
 func (n noop) Errorf(format string, args ...interface{})                        {}
 func (n noop) Debugf(format string, args ...interface{})                        {}
