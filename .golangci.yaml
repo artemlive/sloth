@@ -1,4 +1,0 @@
-issues:
-  exclude-rules:
-    - path: internal/log/log.go
-      text: "unused-parameter: 'format' .*"

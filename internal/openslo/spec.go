@@ -31,11 +31,11 @@ var (
 	specTypeV1AlphaRegexAPIVersion = regexp.MustCompile(`(?m)^apiVersion: +['"]?openslo\/v1alpha['"]? *$`)
 )
 
-func (y YAMLSpecLoader) IsSpecType(ctx context.Context, data []byte) bool {
+func (y YAMLSpecLoader) IsSpecType(_ context.Context, data []byte) bool {
 	return specTypeV1AlphaRegexKind.Match(data) && specTypeV1AlphaRegexAPIVersion.Match(data)
 }
 
-func (y YAMLSpecLoader) LoadSpec(ctx context.Context, data []byte) (*prometheus.SLOGroup, error) {
+func (y YAMLSpecLoader) LoadSpec(_ context.Context, data []byte) (*prometheus.SLOGroup, error) {
 	if len(data) == 0 {
 		return nil, fmt.Errorf("spec is required")
 	}
