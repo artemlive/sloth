@@ -3,14 +3,7 @@ ARG ARCH
 
 FROM golang:1.23.2 as build-stage
 
-LABEL org.opencontainers.image.source https://github.com/slok/sloth
-
-RUN apk --no-cache add \
-    g++ \
-    git \
-    make \
-    curl \
-    bash
+LABEL org.opencontainers.image.source https://github.com/artemlive/sloth
 
 # Required by the built script for setting verion and cross-compiling.
 ARG VERSION
