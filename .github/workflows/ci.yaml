@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     # Execute the checks inside the container instead the VM.
     container: golangci/golangci-lint:v1.61.0-alpine
+    env: 
+      GOFLAGS: "-buildvcs=false"
     steps:
       - uses: actions/checkout@v4
       - run: ./scripts/check/check.sh
