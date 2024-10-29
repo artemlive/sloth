@@ -7,6 +7,7 @@ build_script="./scripts/build/bin/build-raw.sh"
 ostype=${ostype:-"native"}
 
 echo "[+] Build OS type selected: ${ostype}"
+export GOFLAGS=-buildvcs=false
 
 if [ $ostype == 'Linux' ]; then
     EXTENSION="-linux-amd64" GOOS="linux" GOARCH="amd64" ${build_script}
