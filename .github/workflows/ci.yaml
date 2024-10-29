@@ -143,6 +143,8 @@ jobs:
     needs: [check, unit-test, integration-test-cli, integration-test-k8s, helm-chart-test]
     name: Tagged release binaries
     runs-on: ubuntu-latest
+    env: 
+      GOFLAGS: "-buildvcs=false"
     steps:
       - run: echo "VERSION=${GITHUB_REF#refs/*/}" >> ${GITHUB_ENV} # Sets VERSION env var.
       - uses: actions/checkout@v4
