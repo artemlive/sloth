@@ -6,7 +6,7 @@ toolchain go1.23.2
 
 require (
 	github.com/OpenSLO/oslo v0.12.0
-	github.com/go-playground/validator/v10 v10.22.1
+	github.com/go-playground/validator/v10 v10.23.0
 	github.com/oklog/run v1.1.0
 	github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring v0.78.0
 	github.com/prometheus-operator/prometheus-operator/pkg/client v0.78.0
